@@ -1,5 +1,9 @@
+title: MorinLab manuscript template
+author: Morin Lab at SFU
+version: 0.0.1
 format:
   docx:
+    reference-doc: morinlab-manuscript.docx
     toc: false
     geometry:
       - top=25mm
