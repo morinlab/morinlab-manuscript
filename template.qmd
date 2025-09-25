@@ -1,5 +1,5 @@
 ---
-format: morinlab-manuscript
+format: morinlab-manuscript-docx
 date: now
 ---
 

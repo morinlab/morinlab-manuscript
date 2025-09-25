@@ -1,23 +1,11 @@
 title: MorinLab manuscript template
 author: Morin Lab at SFU
 version: 0.0.1
-format:
-  docx:
-    reference-doc: morinlab-manuscript.docx
-    toc: false
-    geometry:
-      - top=25mm
-      - bottom=25mm
-      - right=25mm
-      - left=25mm
-      - footskip=15mm
-    extra_dependencies: ["float"]
-    include-in-header:
-      text: |
-       \usepackage[format=plain,labelfont={bf},labelsep=period]{caption}
-       \usepackage[hyperref=false,backref=false]{biblatex}
-    mainfont: Arial
-    sansfont: Arial
+contributes:
+  formats:
+    docx:
+      reference-doc: morinlab-manuscript.docx
+      toc: false
 
 execute:
   echo: false
