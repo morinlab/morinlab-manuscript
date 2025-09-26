@@ -1,12 +1,11 @@
 ---
 format: morinlab-manuscript-docx
-date: now
 ---
 
 ```{r source}
 library(tidyverse)
 authors <- "authors.yaml"
-source("resources/process_authors.R")
+source("src/process_authors.R")
 ```
 
 ```{r process_authors}
@@ -25,7 +24,7 @@ correspondence <- c(
 )
 ```
 
-# LCR-modules: a collection of workflows for cancer genome analysis {.unnumbered}
+# Manuscript Title {.unnumbered}
 
 `r parsed_authors$parsed_authors`
 
@@ -34,3 +33,54 @@ correspondence <- c(
 `r paste0(correspondence, collapse = "  \n")`
 
 \newpage
+
+## Abstract
+
+`r parsed_authors$abstract`
+
+\newpage
+
+## Introduction
+
+Introduction text goes here.
+
+## Materials and Methods
+
+Text for materials and methods goes here.
+
+## Results
+
+### Results 1
+
+Text for results subsection 1 goes here.
+
+### Results 2
+
+Text for results subsection 2 goes here.
+
+## Discussion
+
+Text for discussion section goes here.
+
+## Acknowledgements
+
+`r parsed_authors$acknowledgements`
+
+## Disclosure of Conflicts of Interest
+
+`r parsed_authors$cois`
+
+## Data Availability
+
+`r parsed_authors$data_availability`
+
+## References
+
+::: {#refs}
+:::
+
+## Figure legends
+
+**Figure 1. Title** Legend.
+
+**Figure 2. Title.** Legend.
