@@ -2,11 +2,24 @@
 title: "Supplemental Figures"
 format:
     pdf:
+        mainfont: "Arial"
+        lof: true
         fig-align: center
         fig-width: 8.5
         fig-height: 11
+        documentclass: article
+        geometry: margin=0.25in
+include-before-body:
+    - text: |
+        \captionsetup{justification=raggedright,singlelinecheck=false}
+crossref:
+    fig-title: "**Supplemental Figure**"
+    fig-labels: "**arabic**"
+    title-delim: "**.**"
 
 ---
+
+\newpage
 
 ```{r setup}
 # load packages
@@ -39,7 +52,9 @@ plots <- list()
 ```
 
 ```{r definitions}
+#| label: fig-sup1
 #| fig-cap: "Example of the plots to assemble as Supplemental Figure 1."
+
 
 metadata <- get_gambl_metadata() %>%
     dplyr::filter(study == "FL_Dreval")
@@ -74,6 +89,7 @@ names(gene_groups) <- genes
 groupNames = c("COMFL", "DLBCL", "FL")
 
 plots$oncoplot <- ggarrange(
+    empty_ggplot,
     grid.grabExpr(
         prettyOncoplot(
             these_samples_metadata = metadata,
@@ -90,7 +106,10 @@ plots$oncoplot <- ggarrange(
             simplify_annotation = TRUE,
             groupNames = groupNames
         )
-    )
+    ),
+    nrow = 1,
+    ncol = 2,
+    widths = c(1,10)
 )
 
 forest <- prettyForestPlot(
