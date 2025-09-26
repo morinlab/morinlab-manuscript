@@ -1,0 +1,133 @@
+---
+title: "Supplemental Figures"
+format:
+    pdf:
+        fig-align: center
+        fig-width: 8.5
+        fig-height: 11
+
+---
+
+```{r setup}
+# load packages
+library(ggpubr)
+library(ComplexHeatmap)
+library(GAMBLR.open)
+
+font_sizes <- list(
+    ggplot_size = 4,
+    ggplot_base = 12,
+    ggplot_title = 14,
+    heatmap_rownames = 6,
+    heatmap_column_titles = 12,
+    heatmap_group_titles = 10,
+    sankey_theme = 16,
+    figures_font_size = 20
+)
+
+theme_set(
+    theme_Morons(
+        base_size = font_sizes$figures_font_size,
+        base_family = "Arial"
+    )
+)
+
+empty_ggplot <- ggplot() + theme_void()
+
+figures_label_position <- "top.right"
+
+plots <- list()
+```
+
+```{r definitions}
+#| fig-cap: "Example of the plots to assemble as Supplemental Figure 1."
+
+metadata <- get_gambl_metadata() %>%
+    dplyr::filter(study == "FL_Dreval")
+
+maf <- get_ssm_by_samples(
+    these_samples_metadata = metadata,
+    tool_name = "publication"
+)
+
+minMutationPercent <- 10
+metadataColumns <- c(
+    "pathology",
+    "lymphgen",
+    "genetic_subgroup",
+    "COO_consensus",
+    "sex"
+)
+metadataBarHeight <- 5
+metadataBarFontsize <- font_sizes$heatmap_group_titles
+fontSizeGene <- font_sizes$heatmap_column_titles
+legendFontSize <- font_sizes$heatmap_rownames
+
+fl_genes <- c("RRAGC", "CREBBP", "VMA21", "ATP6V1B2", "EZH2", "KMT2D")
+dlbcl_genes <- c("MEF2B", "CD79B", "MYD88", "TP53")
+genes <- c(fl_genes, dlbcl_genes)
+gene_groups <- c(
+    rep("FL", length(fl_genes)),
+    rep("DLBCL", length(dlbcl_genes))
+)
+names(gene_groups) <- genes
+
+groupNames = c("COMFL", "DLBCL", "FL")
+
+plots$oncoplot <- ggarrange(
+    grid.grabExpr(
+        prettyOncoplot(
+            these_samples_metadata = metadata,
+            maf_df = maf,
+            metadataColumns = metadataColumns,
+            metadataBarHeight = metadataBarHeight,
+            metadataBarFontsize = metadataBarFontsize,
+            fontSizeGene = fontSizeGene,
+            legendFontSize = legendFontSize,
+            sortByColumns = metadataColumns,
+            genes = genes,
+            splitGeneGroups = gene_groups,
+            splitColumnName = "pathology",
+            simplify_annotation = TRUE,
+            groupNames = groupNames
+        )
+    )
+)
+
+forest <- prettyForestPlot(
+    maf = maf,
+    genes = genes,
+    metadata = metadata %>%
+        dplyr::filter(
+            pathology %in% c("FL", "DLBCL")
+        ),
+    comparison_column = "pathology",
+    max_q = 0.1
+)
+
+plots$forest <- forest$arranged
+
+# Assemble figure
+Supplemental_Figure_1 <- ggarrange(
+    plots$oncoplot,
+    plots$forest,
+    ncol = 1,
+    nrow = 2,
+    labels = LETTERS[1:2]
+)
+
+
+Supplemental_Figure_1 <- annotate_figure(
+    Supplemental_Figure_1,
+    top = text_grob(
+        "",
+        color = "white", face = "bold", size = font_sizes$figures_font_size
+    ),
+    fig.lab = "Supplemental Figure 1",
+    fig.lab.pos = figures_label_position,
+    fig.lab.face = "bold",
+    fig.lab.size = font_sizes$figures_font_size
+)
+
+Supplemental_Figure_1
+```

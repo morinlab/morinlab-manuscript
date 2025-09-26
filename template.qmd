@@ -150,3 +150,5 @@ Text for discussion section goes here.
 <br>
 
 **Figure 2. Title.** Legend.
+
+{{< include _FigSup.qmd >}}
