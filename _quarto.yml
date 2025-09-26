@@ -4,3 +4,4 @@ execute:
     message: false
     error: false
 bibliography: src/references.bib
+csl: src/blood.csl
