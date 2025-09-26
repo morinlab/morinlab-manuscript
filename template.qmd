@@ -26,9 +26,17 @@ correspondence <- c(
 
 # Manuscript Title {.unnumbered}
 
+<br>
+
+<br>
+
 `r parsed_authors$parsed_authors`
 
+<br>
+
 `r parsed_authors$parsed_affiliations`
+
+<br>
 
 `r paste0(correspondence, collapse = "  \n")`
 
@@ -36,51 +44,105 @@ correspondence <- c(
 
 ## Abstract
 
+<br>
+
 `r parsed_authors$abstract`
 
 \newpage
 
 ## Introduction
 
+<br>
+
 Introduction text goes here.
+
+<br>
+
+<br>
 
 ## Materials and Methods
 
+<br>
+
 Text for materials and methods goes here.
 
+<br>
+
+<br>
+
 ## Results
+
+<br>
 
 ### Results 1
 
 Text for results subsection 1 goes here.
 
+<br>
+
 ### Results 2
 
 Text for results subsection 2 goes here.
 
+<br>
+
+<br>
+
 ## Discussion
+
+<br>
 
 Text for discussion section goes here.
 
+<br>
+
+<br>
+
 ## Acknowledgements
+
+<br>
 
 `r parsed_authors$acknowledgements`
 
+<br>
+
+<br>
+
 ## Disclosure of Conflicts of Interest
+
+<br>
 
 `r parsed_authors$cois`
 
+<br>
+
+<br>
+
 ## Data Availability
+
+<br>
 
 `r parsed_authors$data_availability`
 
+\newpage
+
 ## References
+
+<br>
 
 ::: {#refs}
 :::
 
+\newpage
+
 ## Figure legends
 
+<br>
+
+<br>
+
 **Figure 1. Title** Legend.
+
+<br>
 
 **Figure 2. Title.** Legend.
