@@ -1,6 +1,8 @@
 title: MorinLab manuscript template
 author: Morin Lab at SFU
 version: 0.0.1
+resources:
+  - resources/process_authors.R
 contributes:
   formats:
     docx:

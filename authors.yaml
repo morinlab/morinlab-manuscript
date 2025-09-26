@@ -1,0 +1,61 @@
+author:
+  - name: First Author
+    affiliations:
+      [sfu_mbb, gsc]
+  - name: Second Author
+    affiliations:
+      [clc]
+    degrees:
+      "PhD"
+  - name: Ryan D. Morin
+    affiliations:
+      [sfu_mbb, gsc, clc]
+    degrees:
+      "PhD"
+    email: "rdmorin@sfu.ca"
+    attributes:
+      corresponding
+
+affiliations:
+  clc:
+    name: BC Cancer Research Institute
+    department: Centre for Lymphoid Cancer
+    city: Vancouver
+    state: BC
+    country: Canada
+  sfu_mbb:
+    name: Simon Fraser University
+    department: Department of Molecular Biology and Biochemistry
+    city: Burnaby
+    state: BC
+    country: Canada
+  gsc:
+    name: BC Cancer Research Institute
+    department: Canada's Michael Smith Genome Sciences Centre
+    city: Vancouver
+    state: BC
+    country: Canada
+
+abstract:
+  [
+    "
+    Abstract text goes here.
+    "
+  ]
+
+acknowledgements:
+  [
+    "
+    This work was supported by a Terry Fox New Investigator Award (No. 1043) and by an operating grant from the Canadian Institutes for Health Research and a New Investigator Award from the Canadian Institutes for Health Research (R.D.M.). R.D.M. is a Michael Smith Foundation for Health Research Scholar.\n
+    "
+  ]
+
+cois:
+  [
+    "Authors have no competing financial and/or non-financial interests in relation to the work described."
+  ]
+
+data_availability:
+  [
+    "Data availability statement goes here."
+  ]
