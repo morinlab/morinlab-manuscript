@@ -4,7 +4,7 @@ format: morinlab-manuscript-docx
 
 ```{r source}
 library(tidyverse)
-authors <- "authors.yaml"
+authors <- "src/authors.yaml"
 source("src/process_authors.R")
 ```
 
