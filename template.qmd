@@ -56,6 +56,10 @@ correspondence <- c(
 
 Introduction text goes here.
 
+Here is how to enter the reference: [@coyle2025audit].
+
+Here is how to enter multiple references: [@coyle2025audit; @dreval2025lcr]
+
 <br>
 
 <br>
