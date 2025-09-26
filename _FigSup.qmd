@@ -27,8 +27,7 @@ font_sizes <- list(
 
 theme_set(
     theme_Morons(
-        base_size = font_sizes$figures_font_size,
-        base_family = "Arial"
+        base_size = font_sizes$figures_font_size
     )
 )
 
