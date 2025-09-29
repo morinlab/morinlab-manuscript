@@ -1,5 +1,8 @@
 # Morinlab-manuscript Format
 
+This is a quarto extension to simplify the writing of the manuscripts in the Morin Lab.
+
+
 ## Installing
 
 ```bash
