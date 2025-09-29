@@ -9,6 +9,7 @@ format:
         fig-height: 11
         documentclass: article
         geometry: margin=0.25in
+        output-file: "Supplemental_Figures.pdf"
 include-before-body:
     - text: |
         \captionsetup{justification=raggedright,singlelinecheck=false}
