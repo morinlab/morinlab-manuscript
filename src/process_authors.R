@@ -32,7 +32,13 @@ process_authors <- function(author_file, with_degrees = FALSE) {
         if ("corresponding" %in% authors$author[[i]]$attributes) {
             authors$author[[i]]$label <-
                 paste0(
-                    authors$author[[i]]$name, "^", authors$author[[i]]$superscript, "\\*^"
+                    authors$author[[i]]$name, "^", authors$author[[i]]$superscript, "\\,\\*^"
+                )
+        }
+        if ("equal_contribution" %in% authors$author[[i]]$attributes) {
+            authors$author[[i]]$label <-
+                paste0(
+                    authors$author[[i]]$name, "^", authors$author[[i]]$superscript, "\\,\\$^"
                 )
         }
     }
@@ -70,6 +76,15 @@ process_authors <- function(author_file, with_degrees = FALSE) {
     )),
     collapse = "  \n"
     )
+
+    if(grepl("$", parsed_authors, fixed = TRUE)){
+        parsed_affiliations <- paste0(
+            parsed_affiliations,
+            "\n\n",
+            "**^\\$^These authors contributed equally to this study.**",
+            "\n"
+        )
+    }
 
     abstract <- authors$abstract
     acknowledgements <- authors$acknowledgements
