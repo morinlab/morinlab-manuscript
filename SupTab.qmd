@@ -24,9 +24,10 @@ crossref:
 
 ```{r setup}
 # load packages
+library(knitr)
+library(writexl)
 library(GAMBLR.open)
 library(tidyverse)
-
 ```
 
 ```{r tbl1}
@@ -46,7 +47,7 @@ kable(
 
 ```{r tbl2}
 #| label: tbl-sup2
-#| tbl-cap: "Somatic mutations."
+#| tbl-cap: "Preview of somatic mutations."
 
 maf <- get_ssm_by_samples(
     these_samples_metadata = metadata,
