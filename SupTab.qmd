@@ -1,0 +1,73 @@
+---
+title: "Supplemental Tables"
+format:
+    pdf:
+        mainfont: "Arial"
+        lot: true
+        fig-align: center
+        fig-width: 8.5
+        fig-height: 11
+        documentclass: article
+        geometry: margin=0.25in
+include-before-body:
+    - text: |
+        \captionsetup{justification=raggedright,singlelinecheck=false}
+crossref:
+    tbl-title: "**Supplemental Figure**"
+    tbl-labels: "**arabic**"
+    title-delim: "**.**"
+
+---
+
+\newpage
+
+```{r setup}
+# load packages
+library(GAMBLR.open)
+library(tidyverse)
+
+```
+
+```{r tbl1}
+#| label: tbl-sup1
+#| tbl-cap: "Preview of sample metadata."
+
+
+metadata <- get_gambl_metadata() %>%
+    dplyr::filter(study == "FL_Dreval")
+
+kable(
+    metadata %>%
+        select(1:5) %>%
+        head()
+)
+```
+
+```{r tbl2}
+#| label: tbl-sup2
+#| tbl-cap: "Somatic mutations."
+
+maf <- get_ssm_by_samples(
+    these_samples_metadata = metadata,
+    tool_name = "publication"
+)
+
+kable(
+    maf %>%
+        select(1:7) %>%
+        head()
+)
+```
+
+
+```{r export_stables}
+sheets <- list(
+    "S1. Sample metadata" = metadata,
+    "S2. SSM" = maf
+)
+
+write_xlsx(
+    sheets,
+    "Supplemental_Tables.xlsx"
+)
+```
