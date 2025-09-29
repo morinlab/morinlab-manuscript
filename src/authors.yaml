@@ -2,9 +2,18 @@ author:
   - name: First Author
     affiliations:
       [sfu_mbb, gsc]
+    attributes:
+      equal_contribution
   - name: Second Author
     affiliations:
       [clc]
+    degrees:
+      "PhD"
+    attributes:
+      equal_contribution
+  - name: Third Author
+    affiliations:
+      [clc, gsc]
     degrees:
       "PhD"
   - name: Ryan D. Morin
