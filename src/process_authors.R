@@ -1,3 +1,5 @@
+# Big thanks to Laura Hilton for creating this script :ty:
+
 process_authors <- function(author_file, with_degrees = FALSE) {
     authors <- yaml::read_yaml(author_file)
 
