@@ -9,11 +9,12 @@ format:
         fig-height: 11
         documentclass: article
         geometry: margin=0.25in
+        output-file: "Supplemental_Tables.pdf"
 include-before-body:
     - text: |
         \captionsetup{justification=raggedright,singlelinecheck=false}
 crossref:
-    tbl-title: "**Supplemental Figure**"
+    tbl-title: "**Supplemental Table**"
     tbl-labels: "**arabic**"
     title-delim: "**.**"
 
