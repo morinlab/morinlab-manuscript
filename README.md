@@ -20,7 +20,26 @@ This will install the extension and create an example qmd file that you can use 
 
 ## Using
 
-After installation, the directory will be populated with required files and directories. The support files are placed in the directory `src/`, while the main required files are in the directory home. Described below are several main components for the manuscript:
+After installation, the directory will be populated with required files and directories. The support files are placed in the directory `src/`, while the main required files are in the directory home.
+
+```
+.
+├── _extensions
+│   └── morinlab
+├── my_morinlab_manuscript.qmd
+├── _quarto.yml
+├── src
+│   ├── authors.yaml
+│   ├── blood.csl
+│   ├── process_authors.R
+│   └── references.bib
+├── SupFig.qmd
+└── SupTab.qmd
+
+3 directories, 8 files
+```
+
+Described below are several main components for the manuscript:
 
 ### Author list
 
