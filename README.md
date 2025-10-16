@@ -43,7 +43,7 @@ Described below are several main components for the manuscript:
 
 ### Author list
 
-The list of authors can be assembled by modifying the `src/authors.yaml` file. The author list will be composed according to the order of the authors in this file. Each author's affiliation can be specified through a series of associated abbreviation-full descriptor pairs, with examples for SFU, BC Cancer, and CLC already pre-filled for you. The authors with equal contributions, as well as corresponding author, are specified through the optional `attributes` key. The affiliations will be auto-numbered and the corresponding numbers will be auto-associated with each author.
+The list of authors can be assembled by modifying the `src/authors.yaml` file. The author list will be composed according to the order of the authors in this file. Each author's affiliation can be specified through a series of associated abbreviation-full descriptor pairs, with examples for SFU, BC Cancer, and CLC already pre-filled for you. All members of the Morin Lab are also added to the `src/authors.yaml` file for convenience, and the list can be rearranged or modified as needed. The authors with equal contributions, as well as corresponding author, are specified through the optional `attributes` key. The affiliations will be auto-numbered and the corresponding numbers will be auto-associated with each author.
 
 ### Manuscript formatting and submission style
 
