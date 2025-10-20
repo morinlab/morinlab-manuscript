@@ -2,7 +2,7 @@
 format: morinlab-manuscript-docx
 ---
 
-{{< include _code.qmd >>}}
+{{< include _code.qmd >}}
 
 
 # Manuscript Title {.unnumbered}
