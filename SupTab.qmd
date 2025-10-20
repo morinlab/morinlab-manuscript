@@ -64,12 +64,19 @@ kable(
 
 ```{r export_stables}
 sheets <- list(
-    "S1. Sample metadata" = metadata,
-    "S2. SSM" = maf
+    "S1. Sample metadata" = colnames_to_column(
+        metadata,
+        title = "Supplemental Table 1. Metadata of samples used in this study."
+    ),
+    "S2. SSM" = colnames_to_column(
+        maf,
+        title = "Supplemental Table 2. Simple somatic mutations in the maf format."
+    )
 )
 
 write_xlsx(
     sheets,
-    "Supplemental_Tables.xlsx"
+    "Supplemental_Tables.xlsx",
+    col_names = FALSE
 )
 ```

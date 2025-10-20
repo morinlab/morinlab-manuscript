@@ -16,4 +16,41 @@ correspondence <- c(
     "V5A 1S6",
     "rdmorin@sfu.ca"
 )
+
+colnames_to_column <- function(
+        data,
+        title
+    ){
+
+    col_names <- colnames(data)
+    col_names_row <- as.data.frame(t(col_names))
+    colnames(col_names_row) <- colnames(data)
+
+    data_with_col <- data %>%
+        mutate_if(
+            is.numeric, as.character
+        )
+
+    data_with_col <- bind_rows(col_names_row, data_with_col)
+
+    if(!missing(title)){
+        tmp_data <- data.frame(
+            matrix(
+                ncol = ncol(data_with_col),
+                nrow = 1
+            )
+        )
+        colnames(tmp_data) <- colnames(data_with_col)
+        title_row <- tmp_data %>%
+            mutate(
+                !!sym(colnames(data_with_col)[1]) := title
+            )
+        data_with_col <- bind_rows(
+            title_row,
+            data_with_col
+        )
+    }
+
+    return(data_with_col)
+}
 ```
