@@ -1,0 +1,19 @@
+
+```{r source}
+library(tidyverse)
+authors <- "src/authors.yaml"
+source("src/process_authors.R")
+
+parsed_authors <- process_authors(authors)
+
+correspondence <- c(
+    "**\\*Corresponding Author**",
+    "**Dr. Ryan D. Morin**",
+    "Department of Molecular Biology and Biochemistry",
+    "Simon Fraser University",
+    " 8888 University Dr.",
+    "Burnaby, BC, Canada",
+    "V5A 1S6",
+    "rdmorin@sfu.ca"
+)
+```
