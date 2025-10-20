@@ -27,8 +27,8 @@ colnames_to_column <- function(
     colnames(col_names_row) <- colnames(data)
 
     data_with_col <- data %>%
-        mutate_if(
-            is.numeric, as.character
+        mutate_all(
+            as.character
         )
 
     data_with_col <- bind_rows(col_names_row, data_with_col)
