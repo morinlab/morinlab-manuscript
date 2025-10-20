@@ -6,16 +6,61 @@ author:
       equal_contribution
   - name: Second Author
     affiliations:
-      [clc]
+      clc
     degrees:
       "PhD"
     attributes:
       equal_contribution
-  - name: Third Author
+  - name: Laura K. Hilton
     affiliations:
-      [clc, gsc]
+      clc
     degrees:
       "PhD"
+  - name: Krysta M. Coyle
+    affiliations:
+      sfu_mbb
+    degrees:
+      "PhD"
+  - name: Jasper Wong
+    affiliations:
+      clc
+    degrees:
+      "MSc"
+  - name: Sierra Gillis
+    affiliations:
+      [gsc, clc]
+    degrees:
+      "MSc"
+  - name: Kurt Yakimovich
+    affiliations:
+      gsc
+    degrees:
+      "PhD"
+  - name: Kostiantyn Dreval
+    affiliations:
+      [sfu_mbb, gsc]
+    degrees:
+      "PhD"
+  - name: Houman Layegh Mirhosseini
+    affiliations:
+      sfu_mbb
+    degrees:
+      "BSc"
+  - name: Callum Brown
+    affiliations:
+      sfu_mbb
+    degrees:
+      "BSc"
+  - name: Giuliano Banco
+    affiliations:
+      sfu_mbb
+    degrees:
+      "BSc"
+  - name: Sebastian Brost
+    affiliations:
+      sfu_mbb
+    degrees:
+      ""
   - name: Ryan D. Morin
     affiliations:
       [sfu_mbb, gsc, clc]
