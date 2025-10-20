@@ -17,7 +17,7 @@ correspondence <- c(
     "rdmorin@sfu.ca"
 )
 
-colnames_to_column <- function(
+colnames_to_row <- function(
         data,
         title
     ){
