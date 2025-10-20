@@ -1,9 +1,9 @@
 ---
-title: "Supplemental Figures"
+title: ""
 format:
     pdf:
         mainfont: "Arial"
-        lof: true
+        lof: false
         fig-align: center
         fig-width: 8.5
         fig-height: 11
@@ -19,6 +19,48 @@ crossref:
     title-delim: "**.**"
 
 ---
+
+{{< include _code.qmd >}}
+
+\
+\
+
+\begin{center}
+
+\huge \textbf{MANUSCRIPT TITLE}
+
+\end{center}
+
+\
+\
+\
+
+```{r}
+first_author <- sub("^([^\\^]+)\\^.*$", "\\1", parsed_authors$parsed_authors)
+first_et_al <- paste0(
+    "\\noindent\\hspace{4em}\\textbf{",
+    first_author,
+    " et al.}"
+)
+```
+
+`r first_et_al`
+
+\
+\
+\
+
+\noindent\hspace{4em}\textbf{Supplementary Information}
+
+
+\newpage
+
+```{=latex}
+\clearpage
+{
+\listoffigures
+}
+```
 
 \newpage
 
