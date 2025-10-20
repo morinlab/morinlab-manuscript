@@ -20,6 +20,8 @@ crossref:
 
 ---
 
+{{< include _code.qmd >}}
+
 \newpage
 
 ```{r setup}
@@ -27,7 +29,6 @@ crossref:
 library(knitr)
 library(writexl)
 library(GAMBLR.open)
-library(tidyverse)
 ```
 
 ```{r tbl1}
